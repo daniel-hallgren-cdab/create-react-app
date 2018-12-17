@@ -1,14 +1,14 @@
 {
-  "name": "react-scripts",
+  "name": "cdab-reactplate",
   "version": "2.1.1",
-  "description": "Configuration and scripts for Create React App.",
-  "repository": "facebook/create-react-app",
+  "description": "CDAB Configuration and scripts for Create React App.",
+  "repository": "daniel-hallgren-cdab/create-react-app",
   "license": "MIT",
   "engines": {
     "node": ">=6"
   },
   "bugs": {
-    "url": "https://github.com/facebook/create-react-app/issues"
+    "url": "https://github.com/daniel-hallgren-cdab/create-react-app/issues"
   },
   "files": [
     "bin",
