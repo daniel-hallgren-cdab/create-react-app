@@ -132,8 +132,8 @@ module.exports = function(
     'tslint-react': '3.6.0',
   };
 
-  // const useTypeScript = appPackage.dependencies['typescript'] != null;
-  const useTypeScript = true; // ReactPlate defaults to TypeScript
+  // ReactPlate currently only works with TypeScript
+  const useTypeScript = appPackage.dependencies['typescript'] != null;
 
   // Setup the script rules
   appPackage.scripts = {
