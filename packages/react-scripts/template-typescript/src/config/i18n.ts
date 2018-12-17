@@ -1,6 +1,6 @@
-// import * as i18n from 'i18next'
-import { default as i18n } from 'i18next'
-import { default as LngDetector } from 'i18next-browser-languagedetector'
+import i18next from 'i18next'
+import { reactI18nextModule } from 'react-i18next'
+import { default as LngDetector, DetectorOptions } from 'i18next-browser-languagedetector'
 
 // English
 import en_common from '../i18n/en/common.json'
@@ -8,7 +8,7 @@ import en_common from '../i18n/en/common.json'
 // Swedish
 import sv_common from '../i18n/sv/common.json'
 
-const options: i18n.DetectionPluginOptions = {
+const options: DetectorOptions = {
   // order and from where user language should be detected
   order: ['localStorage', 'navigator', 'htmlTag'],
 
@@ -22,7 +22,10 @@ const options: i18n.DetectionPluginOptions = {
   htmlTag: document.documentElement,
 }
 
-const instance = i18n.use(LngDetector).init(
+i18next
+  .use(reactI18nextModule)
+  .use(LngDetector)
+  .init(
   {
     interpolation: { escapeValue: false },
     fallbackLng: ['en', 'sv'],
@@ -47,4 +50,4 @@ const instance = i18n.use(LngDetector).init(
   }
 )
 
-export default instance
+export const instance = i18next
