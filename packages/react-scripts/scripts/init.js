@@ -219,6 +219,11 @@ module.exports = function(
 
   console.log();
   console.log(`Success! Created ${appName} at ${appPath}`);
+  
+  // ReactPlate custom messages
+  console.log(chalk.red('VERY IMPORTANT:'));
+  console.log('Copy the .env.example file to a .env file at the root of your project')
+  
   console.log('Inside that directory, you can run several commands:');
   console.log();
   console.log(chalk.cyan(`  ${displayedCommand} start`));
