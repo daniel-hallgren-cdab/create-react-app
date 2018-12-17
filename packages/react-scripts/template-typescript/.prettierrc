@@ -1,0 +1,14 @@
+{
+  "printWidth": 100,
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "overrides": [
+    {
+      "files": "*.css.d.ts",
+      "options": {
+        "semi": true
+      }
+    }
+  ]
+}
