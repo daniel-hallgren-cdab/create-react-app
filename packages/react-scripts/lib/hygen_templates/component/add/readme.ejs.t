@@ -6,5 +6,5 @@ to: <%= srcPath %>/src/components/<%= name %>/Readme.md
 A plain `<<%= name %>>` component
 
 ```jsx
-<<%= name %> />
+<<%= name %>>Some content</<%= name %>>
 ```

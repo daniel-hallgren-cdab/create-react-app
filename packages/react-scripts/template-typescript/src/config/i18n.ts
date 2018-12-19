@@ -44,10 +44,10 @@ i18next
       wait: true,
     },
   },
-  (err, t) => {
+  (err) => {
     if (err) return console.log('something went wrong loading', err)
-    t('key')
   }
 )
 
 export const instance = i18next
+export default i18next

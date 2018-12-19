@@ -9,7 +9,8 @@ import styled from 'styled-components'
 
 /* Import components here */
 
-// CSS
+/* Styles */
+
 const Styled<%= name %> = styled.div`
   /* background: white; */
 
@@ -20,13 +21,15 @@ const Styled<%= name %> = styled.div`
   */
 `
 
-// Props
+/* Interfaces */
+
 export interface I<%= name %>Props extends WithI18n {
   /** A great <%= name %> title */
   /* title: string */
 }
 
-// Component
+/* Component */
+
 <% if (locals.class) { -%>
 export class <%= name %> extends React.Component<I<%= name %>Props> {
   render () {
@@ -41,7 +44,7 @@ export class <%= name %> extends React.Component<I<%= name %>Props> {
   }
 }
 <% } else { -%>
-export const <%= name %>: React.SFC<I<%= name %>Props> = ({ t, children, ...props }) => {
+export const <%= name %>: React.FunctionComponent<I<%= name %>Props> = ({ t, children, ...props }) => {
   return (
     <Styled<%= name %> {...props}>
       <span><%= name %></span>

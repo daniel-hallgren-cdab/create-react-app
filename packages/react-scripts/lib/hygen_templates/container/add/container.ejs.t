@@ -42,7 +42,7 @@ export class <%= name %> extends React.Component<I<%= name %>Props> {
   }
 }
 <% } else { -%>
-export const <%= name %>: React.SFC<I<%= name %>Props> = ({ t, children, ...props }) => {
+export const <%= name %>: React.FunctionComponent<I<%= name %>Props> = ({ t, children, ...props }) => {
   return (
     <Styled<%= name %> {...props}>
       <span><%= name %></span>

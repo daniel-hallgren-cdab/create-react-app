@@ -1,35 +1,36 @@
 import * as React from 'react'
-import { Component } from 'react'
+import { withI18n, WithI18n } from 'react-i18next'
+import styled from 'styled-components'
 
-/**
- * Button properties.
- */
-export interface IButtonProps {
-  /** Pass your own click event handler, if you wish */
-  onClick?(): void
+/* Import utilities here */
+
+/* Import components here */
+
+// CSS
+const StyledButton = styled.button`
+  /* background: white; */
+
+  /* Nested CSS
+  span {
+    color: black;
+  }
+  */
+`
+
+// Props
+export interface IButtonProps extends WithI18n {
+  /** A great Button title */
+  /* title: string */
 }
 
-/**
- * Form Button
- */
-export class Button extends Component<IButtonProps> {
-  state = {
-    text: this.props.children,
-  }
-
-  handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    this.setState({
-      text: 'I CHANGED',
-    })
-  }
-
-  render() {
-    const { children, onClick, ...props } = this.props
-
-    return (
-      <button onClick={onClick || this.handleClick} {...props}>
-        {this.state.text}
-      </button>
-    )
-  }
+// Component
+const Button: React.FunctionComponent<IButtonProps> = ({ t, children, ...props }) => {
+  return (
+    <StyledButton {...props}>
+      { children }
+    </StyledButton>
+  )
 }
+
+/** @component */
+export default withI18n()(Button)

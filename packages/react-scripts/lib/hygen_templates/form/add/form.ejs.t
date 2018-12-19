@@ -15,10 +15,11 @@ import { faAsterisk } from '@fortawesome/free-solid-svg-icons'
 /* Import utilities here */
 
 /* Import components here */
+import { Button } from '../'
 
 /* Validation */
 
-import { validationSchema } from '.'
+import { validationSchema } from './validationSchema'
 
 /* Styles */
 
@@ -52,7 +53,7 @@ const Inner<%= name %>Form = (props: FormikProps<FormValues>) => {
 
   return (
     <Form>
-      <Field component={StyledInput} name='email' placeholder={ t('<%= name %>-form:email-placeholder') } />
+      <Field component={StyledField} name='email' placeholder={ t('<%= name %>-form:email-placeholder') } />
       <ErrorMessage name='email' />
       <Button type='submit' disabled={isSubmitting}>{ isSubmitting ? <FontAwesomeIcon icon={faAsterisk} spin /> : t('<%= name %>-form:submit') }</Button>
     </Form>

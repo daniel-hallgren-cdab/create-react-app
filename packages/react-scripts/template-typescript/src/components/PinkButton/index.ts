@@ -1,1 +1,1 @@
-export * from './PinkButton'
+export { default as PinkButton } from './PinkButton'

@@ -2,6 +2,6 @@
 
 If you like colors too, you can use this component!
 
-```js
+```jsx
 <PinkButton>I like colors</PinkButton>
 ```

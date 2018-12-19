@@ -91,9 +91,8 @@ module.exports = function(
   const reactplateDependencies = {
     '@fortawesome/fontawesome-common-types': '0.2.10',
     '@fortawesome/fontawesome-svg-core': '1.2.10',
-    '@fortawesome/pro-light-svg-icons': '5.6.1',
-    '@fortawesome/pro-regular-svg-icons': '5.6.1',
-    '@fortawesome/pro-solid-svg-icons': '5.6.1',
+    '@fortawesome/free-regular-svg-icons': '5.6.1',
+    '@fortawesome/free-solid-svg-icons': '5.6.1',
     '@fortawesome/react-fontawesome': '0.1.3',
     '@sentry/browser': '4.4.2',
     apisauce: '1.0.1',
