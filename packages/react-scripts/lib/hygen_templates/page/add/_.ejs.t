@@ -1,4 +1,4 @@
 ---
 to: null
-sh: "touch <%= srcPath %>/src/pages/index.tsx"
+sh: "touch <%= srcPath %>/src/pages/index.ts"
 ---
