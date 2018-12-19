@@ -1,5 +1,5 @@
 ---
-to: <%= cwd %>/src/containers/<%= name %>/<%= name %>.tsx
+to: <%= srcPath %>/src/pages/<%= name %>/<%= name %>.tsx
 ---
 import * as React from 'react'
 import { withI18n, WithI18n } from 'react-i18next'
@@ -8,10 +8,9 @@ import styled from 'styled-components'
 /* Import utilities here */
 
 /* Import components here */
-import { <%= component %> } from '../../components'
 
 // CSS
-const Styled<%= name %> = styled(<%= component %>)`
+const Styled<%= name %> = styled.div`
   /* background: white; */
 
   /* Nested CSS

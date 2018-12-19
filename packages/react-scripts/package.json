@@ -1,7 +1,7 @@
 {
   "name": "cdab-reactplate",
-  "version": "2.1.5",
-  "description": "CDAB Configuration and scripts for Create React App (2.1.1).",
+  "version": "2.1.6+rs2.1.1",
+  "description": "CDAB Configuration and scripts for Create React App.",
   "repository": "daniel-hallgren-cdab/create-react-app",
   "license": "MIT",
   "engines": {
@@ -21,6 +21,9 @@
   ],
   "bin": {
     "react-scripts": "./bin/react-scripts.js"
+  },
+  "scripts": {
+    "hygen": "hygen"
   },
   "types": "./lib/react-app.d.ts",
   "dependencies": {
@@ -49,6 +52,7 @@
     "fork-ts-checker-webpack-plugin-alt": "0.4.14",
     "fs-extra": "7.0.0",
     "html-webpack-plugin": "4.0.0-alpha.2",
+    "hygen": "1.6.2",
     "identity-obj-proxy": "3.0.0",
     "jest": "23.6.0",
     "jest-pnp-resolver": "1.0.1",

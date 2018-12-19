@@ -1,4 +1,4 @@
 ---
-to: <%= cwd %>/src/containers/<%= name %>/index.tsx
+to: <%= srcPath %>/src/pages/<%= name %>/index.tsx
 ---
 export { default as <%= name %> } from './<%= name %>'

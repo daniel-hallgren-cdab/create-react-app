@@ -1,5 +1,5 @@
 ---
-to: <%= cwd %>/src/components/<%= name %>/Readme.md
+to: <%= srcPath %>/src/components/<%= name %>/Readme.md
 ---
 ### Examples
 

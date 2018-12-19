@@ -5,17 +5,17 @@ module.exports = [
     // The argument's name
     name: 'name',
     // The message to prompt
-    message: 'What\'s the name of the container?',
+    message: "What's the name of the container?",
     // Required input
-    validate: function (input) {
-      return new Promise(function (res, rej) {
+    validate: function(input) {
+      return new Promise(function(res, rej) {
         if (!input) {
-          rej('You must provide a value!')
+          rej('You must provide a value!');
         }
 
-        res(true)
-      })
-    }
+        res(true);
+      });
+    },
   },
   {
     // Text input
@@ -23,17 +23,17 @@ module.exports = [
     // The argument's name
     name: 'component',
     // The message to prompt
-    message: 'What\'s the name of the component to use?',
+    message: "What's the name of the component to use?",
     // Required input
-    validate: function (input) {
-      return new Promise(function (res, rej) {
+    validate: function(input) {
+      return new Promise(function(res, rej) {
         if (!input) {
-          rej('You must provide a value!')
+          rej('You must provide a value!');
         }
 
-        res(true)
-      })
-    }
+        res(true);
+      });
+    },
   },
   {
     // Yes/no question
@@ -43,6 +43,6 @@ module.exports = [
     // The message to prompt
     message: 'Do you want to use a class component?',
     // Use functional component by default
-    default: false
-  }
-]
+    default: false,
+  },
+];

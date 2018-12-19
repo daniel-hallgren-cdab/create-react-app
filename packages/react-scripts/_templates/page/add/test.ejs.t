@@ -1,5 +1,5 @@
 ---
-to: <%= cwd %>/src/pages/<%= name %>/<%= name %>.test.tsx
+to: <%= srcPath %>/src/pages/<%= name %>/<%= name %>.test.tsx
 ---
 import * as React from 'react'
 import { render } from 'react-testing-library'

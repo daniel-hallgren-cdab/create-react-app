@@ -1,5 +1,5 @@
 ---
-to: <%= cwd %>/src/components/<%= name %>/<%= name %>.tsx
+to: <%= srcPath %>/src/components/<%= name %>/<%= name %>.tsx
 ---
 import * as React from 'react'
 import { withI18n, WithI18n } from 'react-i18next'

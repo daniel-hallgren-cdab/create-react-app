@@ -1,5 +1,5 @@
 ---
-to: <%= cwd %>/src/containers/<%= name %>/<%= name %>.test.tsx
+to: <%= srcPath %>/src/components/<%= name %>/<%= name %>.test.tsx
 ---
 import * as React from 'react'
 import { render } from 'react-testing-library'

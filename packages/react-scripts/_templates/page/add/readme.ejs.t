@@ -1,5 +1,5 @@
 ---
-to: <%= cwd %>/src/pages/<%= name %>/Readme.md
+to: <%= srcPath %>/src/pages/<%= name %>/Readme.md
 ---
 ### Description
 

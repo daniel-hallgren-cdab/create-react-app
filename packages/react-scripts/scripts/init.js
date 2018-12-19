@@ -119,7 +119,6 @@ module.exports = function(
     '@types/styled-components': '4.1.4',
     '@types/yup': '0.26.3',
     husky: '1.2.1',
-    hygen: '1.6.2',
     'jest-dom': '3.0.0',
     'lint-staged': '8.1.0',
     prettier: '1.15.3',
@@ -141,13 +140,13 @@ module.exports = function(
     build: 'react-scripts build',
     test: 'react-scripts test',
     eject: 'react-scripts eject',
+    hygen: 'react-scripts hygen',
     'test:ci': 'CI=true react-scripts test --env=jsdom',
     'tslint-check': 'tslint-config-prettier-check ./tslint.json',
     solidarity: 'solidarity; exit 0;',
     'solidarity:snapshot': 'solidarity snapshot',
     styleguidist: 'npx styleguidist server',
     'styleguide:build': 'styleguidist build',
-    hygen: 'hygen',
   };
 
   // Setup the eslint config
