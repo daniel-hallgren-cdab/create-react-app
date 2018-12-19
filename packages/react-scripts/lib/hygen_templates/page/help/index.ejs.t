@@ -1,6 +1,6 @@
 ---
 message: |
 
-  Prompted:
+  Create a new page
   - hygen {bold page} add
 ---

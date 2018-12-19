@@ -1,6 +1,6 @@
 ---
 message: |
 
-  Prompted:
+  Create a new container
   - hygen {bold container} add
 ---
