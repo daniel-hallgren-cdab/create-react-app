@@ -22,7 +22,9 @@ const execSync = require('child_process').execSync;
 const ownPath = path.join(path.resolve(__dirname, '..'));
 
 // Hygen templates path
-const templatesPath = path.join(path.resolve(__dirname, '..', '_templates'));
+const templatesPath = path.join(
+  path.resolve(__dirname, '..', 'lib/hygen_templates')
+);
 
 const argv = process.argv.slice(2);
 
