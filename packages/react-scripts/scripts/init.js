@@ -89,21 +89,21 @@ module.exports = function(
   const useYarn = fs.existsSync(path.join(appPath, 'yarn.lock'));
 
   const reactplateDependencies = {
-    '@fortawesome/fontawesome-common-types': '0.2.10',
-    '@fortawesome/fontawesome-svg-core': '1.2.10',
-    '@fortawesome/free-regular-svg-icons': '5.6.1',
-    '@fortawesome/free-solid-svg-icons': '5.6.1',
-    '@fortawesome/react-fontawesome': '0.1.3',
-    '@sentry/browser': '4.4.2',
-    apisauce: '1.0.1',
+    '@fortawesome/fontawesome-common-types': '0.2.15',
+    '@fortawesome/fontawesome-svg-core': '1.2.15',
+    '@fortawesome/free-regular-svg-icons': '5.7.2',
+    '@fortawesome/free-solid-svg-icons': '5.7.2',
+    '@fortawesome/react-fontawesome': '0.1.4',
+    '@sentry/browser': '4.6.4',
+    apisauce: '1.0.2',
     classnames: '2.2.6',
-    formik: '1.4.1',
+    formik: '1.5.1',
     i18next: '13.0.0',
     'i18next-browser-languagedetector': '2.2.4',
     'react-i18next': '8.4.0',
     'react-router-dom': '4.3.1',
     'styled-components': '4.1.3',
-    yup: '0.26.6',
+    yup: '0.26.10',
   };
 
   // Copy over some of the devDependencies
@@ -111,22 +111,22 @@ module.exports = function(
     Object.assign({}, appPackage.dependencies, reactplateDependencies) || {};
 
   appPackage.devDependencies = {
-    '@types/classnames': '2.2.6',
+    '@types/classnames': '2.2.7',
     '@types/i18next': '12.1.0',
     '@types/i18next-browser-languagedetector': '2.0.1',
     '@types/react-router-dom': '4.3.1',
-    '@types/styled-components': '4.1.4',
-    '@types/yup': '0.26.3',
-    husky: '1.2.1',
-    'jest-dom': '3.0.0',
-    'lint-staged': '8.1.0',
-    prettier: '1.15.3',
-    'react-docgen-typescript': '1.12.2',
-    'react-styleguidist': '8.0.6',
-    'react-testing-library': '5.4.0',
+    '@types/styled-components': '4.1.11',
+    '@types/yup': '0.26.10',
+    husky: '1.3.1',
+    'jest-dom': '3.1.2',
+    'lint-staged': '8.1.4',
+    prettier: '1.16.4',
+    'react-docgen-typescript': '1.12.3',
+    'react-styleguidist': '9.0.1',
+    'react-testing-library': '6.0.0',
     solidarity: '2.3.1',
-    tslint: '5.11.0',
-    'tslint-config-prettier': '1.17.0',
+    tslint: '5.13.0',
+    'tslint-config-prettier': '1.18.0',
     'tslint-react': '3.6.0',
   };
 
@@ -136,14 +136,24 @@ module.exports = function(
   // Setup the script rules
   appPackage.scripts = {
     start: 'react-scripts start',
-    build: 'react-scripts build',
     test: 'react-scripts test',
+    'test:ci': 'CI=true react-scripts test --env=jsdom',
+    build: 'react-scripts build',
     eject: 'react-scripts eject',
     hygen: 'react-scripts hygen',
-    'test:ci': 'CI=true react-scripts test --env=jsdom',
+    'format:js': 'prettier --write {.,**}/*.js',
+    'format:json': 'prettier --write {.,**}/*.json',
+    'format:md': 'prettier --write {.,**}/*.md',
+    'format:ts': 'prettier --write {.,**}/*.{ts,tsx} && tslint --fix -p .',
+    format: 'npm-run-all format:*',
+    'generate-mock-data': 'node src/api/mockup/generateMockData.js',
+    'lint:ts': 'tslint -p .',
+    lint: 'npm-run-all lint:*',
+    postinstall: 'solidarity',
     'tslint-check': 'tslint-config-prettier-check ./tslint.json',
     solidarity: 'solidarity; exit 0;',
     'solidarity:snapshot': 'solidarity snapshot',
+    'start-mockapi': 'json-server --watch src/api/mockup/db.json --port 3001',
     styleguidist: 'npx styleguidist server',
     'styleguide:build': 'styleguidist build',
   };
@@ -155,6 +165,25 @@ module.exports = function(
 
   // Setup the browsers list
   appPackage.browserslist = defaultBrowsers;
+
+  // Setup Husky
+  appPackage.husky = {
+    hooks: {
+      'pre-commit': 'lint-staged',
+      'pre-push': 'npm run test:ci',
+    },
+  };
+
+  // Setup lint-staged
+  appPackage['lint-staged'] = {
+    'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}': [
+      'npm run format:js',
+      'npm run format:json',
+      'npm run format:md',
+      'npm run format:ts',
+      'git add',
+    ],
+  };
 
   fs.writeFileSync(
     path.join(appPath, 'package.json'),

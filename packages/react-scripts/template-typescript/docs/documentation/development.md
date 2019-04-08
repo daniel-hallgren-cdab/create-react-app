@@ -16,7 +16,7 @@ Refer to the documentation using `hygen component help`
 
 ##### Examples
 
-```console
+```bash
 $ npm run hygen component add
 ```
 
@@ -26,7 +26,7 @@ Refer to the documentation using `hygen container help`
 
 ##### Examples
 
-```console
+```bash
 $ npm run hygen container add
 ```
 
@@ -36,7 +36,7 @@ Refer to the documentation using `hygen page help`
 
 ##### Examples
 
-```console
+```bash
 $ npm run hygen page add
 ```
 

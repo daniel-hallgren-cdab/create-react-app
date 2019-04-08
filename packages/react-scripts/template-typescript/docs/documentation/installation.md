@@ -1,7 +1,9 @@
 ## Prerequisites
 
+```bash
 `Node: >=8.11.0`
 `NPM: >=5.6.0`
+```
 
 ### Mac/Linux
 
