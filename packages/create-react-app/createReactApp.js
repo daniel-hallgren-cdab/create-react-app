@@ -135,7 +135,6 @@ if (program.info) {
         npmGlobalPackages: ['create-react-app'],
       },
       {
-        clipboard: false,
         duplicates: true,
         showNotFound: true,
       }
@@ -243,7 +242,7 @@ function createApp(
           chalk.yellow(
             `You are using npm ${
               npmInfo.npmVersion
-            } so the project will be boostrapped with an old unsupported version of tools.\n\n` +
+            } so the project will be bootstrapped with an old unsupported version of tools.\n\n` +
               `Please update to npm 3 or higher for a better, fully supported experience.\n`
           )
         );
@@ -255,11 +254,13 @@ function createApp(
     const yarnInfo = checkYarnVersion();
     if (!yarnInfo.hasMinYarnPnp) {
       if (yarnInfo.yarnVersion) {
-        chalk.yellow(
-          `You are using Yarn ${
-            yarnInfo.yarnVersion
-          } together with the --use-pnp flag, but Plug'n'Play is only supported starting from the 1.12 release.\n\n` +
-            `Please update to Yarn 1.12 or higher for a better, fully supported experience.\n`
+        console.log(
+          chalk.yellow(
+            `You are using Yarn ${
+              yarnInfo.yarnVersion
+            } together with the --use-pnp flag, but Plug'n'Play is only supported starting from the 1.12 release.\n\n` +
+              `Please update to Yarn 1.12 or higher for a better, fully supported experience.\n`
+          )
         );
       }
       // 1.11 had an issue with webpack-dev-middleware, so better not use PnP with it (never reached stable, but still)
@@ -268,10 +269,21 @@ function createApp(
   }
 
   if (useYarn) {
-    fs.copySync(
-      require.resolve('./yarn.lock.cached'),
-      path.join(root, 'yarn.lock')
-    );
+    let yarnUsesDefaultRegistry = true;
+    try {
+      yarnUsesDefaultRegistry =
+        execSync('yarnpkg config get registry')
+          .toString()
+          .trim() === 'https://registry.yarnpkg.com';
+    } catch (e) {
+      // ignore
+    }
+    if (yarnUsesDefaultRegistry) {
+      fs.copySync(
+        require.resolve('./yarn.lock.cached'),
+        path.join(root, 'yarn.lock')
+      );
+    }
   }
 
   run(
@@ -454,7 +466,7 @@ function run(
       const currentFiles = fs.readdirSync(path.join(root));
       currentFiles.forEach(file => {
         knownGeneratedFiles.forEach(fileToMatch => {
-          // This remove all of knownGeneratedFiles.
+          // This removes all knownGeneratedFiles.
           if (file === fileToMatch) {
             console.log(`Deleting generated file... ${chalk.cyan(file)}`);
             fs.removeSync(path.join(root, file));
