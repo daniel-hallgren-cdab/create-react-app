@@ -1,43 +1,53 @@
-import * as React from 'react'
-import { render, cleanup, fireEvent } from 'react-testing-library'
 import 'jest-dom/extend-expect'
+import * as React from 'react'
+import { cleanup, fireEvent, render } from 'react-testing-library'
+import { ThemeProvider } from '../../theme/StyledComponents'
 
-import { I18nextProvider } from 'react-i18next'
-import { ThemeProvider } from 'styled-components'
+import { theme } from '../../theme'
+
+import { Button } from '.'
 
 afterEach(cleanup)
 
-/* Import utilities here */
-import i18n from '../../config/i18n'
-import { theme } from '../../theme'
+test('renders without crashing', () => {
+  render(
+    <ThemeProvider theme={theme}>
+      <Button />
+    </ThemeProvider>
+  )
+})
 
-/* Import components here */
-import { Button } from './'
+test('changes text on click', () => {
+  const { container } = render(
+    <ThemeProvider theme={theme}>
+      <Button>My button</Button>
+    </ThemeProvider>
+  )
 
-describe('Button', () => {
-  it('renders without crashing', () => {
-    const { container } = render(
-      <I18nextProvider i18n={i18n}>
-        <ThemeProvider theme={theme}>
-          <Button>My button</Button>
-        </ThemeProvider>
-      </I18nextProvider>
-    )
-  })
-  
-  it('does no change text on click', () => {
-    const { container } = render(
-      <I18nextProvider i18n={i18n}>
-        <ThemeProvider theme={theme}>
-          <Button>My button</Button>
-        </ThemeProvider>
-      </I18nextProvider>
-    )
+  const elem = container.firstChild
 
-    expect(container.firstChild).toHaveTextContent('My button')
-  
-    fireEvent.click(container.firstChild)
-  
-    expect(container.firstChild).toHaveTextContent('My button')
-  })
+  expect(elem).toHaveTextContent('My button')
+})
+
+test('changes does not change on click', () => {
+  const { container } = render(
+    <ThemeProvider theme={theme}>
+      <Button
+        // tslint:disable-next-line:jsx-no-lambda
+        onClick={() => {
+          return null
+        }}
+      >
+        My button
+      </Button>
+    </ThemeProvider>
+  )
+
+  const elem = container.firstChild
+
+  expect(elem).toHaveTextContent('My button')
+
+  fireEvent.click(elem as HTMLElement)
+
+  expect(elem).toHaveTextContent('My button')
 })

@@ -1,1 +1,1 @@
-export * from './ErrorComponent'
+export { default as ErrorComponent } from './ErrorComponent'

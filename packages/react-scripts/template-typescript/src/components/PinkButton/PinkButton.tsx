@@ -1,23 +1,10 @@
-import styled from 'styled-components'
+import * as React from 'react'
 
-/* Import utilities here */
+import { StyledPinkButton } from './PinkButton.styles'
 
-/* Import components here */
-
-// CSS
-export const PinkButton = styled.button`
-  appearance: none;
-
-  padding: 1rem;
-
-  font: inherit;
-
-  color: white;
-  background: deeppink;
-
-  border: 0;
-  border-radius: .25rem;
-`
+export const PinkButton: React.FunctionComponent = ({ children, ...props }) => (
+  <StyledPinkButton {...props}>{children}</StyledPinkButton>
+)
 
 /** @component */
 export default PinkButton

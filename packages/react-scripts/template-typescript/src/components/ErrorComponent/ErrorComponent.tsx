@@ -1,11 +1,9 @@
-import * as React from 'react'
+import React, { useEffect } from 'react'
 
-export class ErrorComponent extends React.Component {
-  componentDidMount = () => {
+export const ErrorComponent = () => {
+  useEffect(() => {
     throw new Error('A very dangerous error')
-  }
+  })
 
-  render() {
-    return <h4>This components makes the app crash</h4>
-  }
+  return <h4>This component makes the app crash</h4>
 }
