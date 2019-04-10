@@ -96,13 +96,15 @@ function verifyTypeScriptSetup() {
     // tsconfig.json
     // 'parsedValue' matches the output value from ts.parseJsonConfigFileContent()
     target: {
-      parsedValue: ts.ScriptTarget.ES5,
-      suggested: 'es5',
+      parsedValue: ts.ScriptTarget.ES2017, // cdab-reactplate
+      suggested: 'es2017', // cdab-reactplate
     },
     lib: { suggested: ['dom', 'dom.iterable', 'esnext'] },
-    allowJs: { suggested: true },
+    allowJs: { suggested: false },
     skipLibCheck: { suggested: true },
+    sourceMap: { suggested: true },
     esModuleInterop: { suggested: true },
+    experimentalDecorators: { suggested: true },
     allowSyntheticDefaultImports: { suggested: true },
     strict: { suggested: true },
     forceConsistentCasingInFileNames: { suggested: true },
@@ -122,6 +124,12 @@ function verifyTypeScriptSetup() {
     resolveJsonModule: { value: true, reason: 'to match webpack loader' },
     isolatedModules: { value: true, reason: 'implementation limitation' },
     noEmit: { value: true },
+    // cdab-reactplate: start
+    noImplicitAny: { value: false },
+    noImplicitReturns: { value: true },
+    noImplicitThis: { value: true },
+    noUnusedLocals: { value: true },
+    // cdab-reactplate: end
     jsx: {
       parsedValue: ts.JsxEmit.Preserve,
       value: 'preserve',
@@ -225,11 +233,21 @@ function verifyTypeScriptSetup() {
 
   // tsconfig will have the merged "include" and "exclude" by this point
   if (parsedTsConfig.include == null) {
-    appTsConfig.include = ['src'];
+    appTsConfig.include = [
+      'src',
+      // cdab-reactplate: start
+      'tests',
+      // cdab-reactplate: end
+    ];
     messages.push(
       `${chalk.cyan('include')} should be ${chalk.cyan.bold('src')}`
     );
   }
+
+  // cdab-reactplate: start
+  // add node_modules and mockup files to "exclude"
+  appTsConfig.exclude = ['node_modules', 'src/api/mockup'];
+  // cdab-reactplate: end
 
   if (messages.length > 0) {
     if (firstTimeSetup) {
