@@ -1,6 +1,6 @@
 import i18next from 'i18next'
-import { reactI18nextModule } from 'react-i18next'
-import { default as LngDetector, DetectorOptions } from 'i18next-browser-languagedetector'
+import { initReactI18next } from 'react-i18next'
+import LngDetector from 'i18next-browser-languagedetector'
 
 // English
 import en_common from '../i18n/en/common.json'
@@ -8,7 +8,7 @@ import en_common from '../i18n/en/common.json'
 // Swedish
 import sv_common from '../i18n/sv/common.json'
 
-const options: DetectorOptions = {
+const options = {
   // order and from where user language should be detected
   order: ['localStorage', 'navigator', 'htmlTag'],
 
@@ -23,15 +23,17 @@ const options: DetectorOptions = {
 }
 
 i18next
-  .use(reactI18nextModule)
   .use(LngDetector)
+  .use(initReactI18next)
   .init(
   {
-    interpolation: { escapeValue: false },
     fallbackLng: ['en', 'sv'],
     debug: true,
+
+    interpolation: { escapeValue: false },
     defaultNS: 'common',
     detection: options,
+
     resources: {
       en: {
         common: en_common,

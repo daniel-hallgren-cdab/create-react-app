@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled, { keyframes } from 'styled-components'
-import { withI18n, WithI18n } from 'react-i18next'
+import { withTranslation, WithTranslation } from 'react-i18next'
 import { NavLink } from 'react-router-dom'
 
 import { Button } from '../../components/Button'
@@ -45,7 +45,7 @@ const AppLogo = styled.img`
   }
 `
 
-export interface StartPageProps extends WithI18n {}
+export interface StartPageProps extends WithTranslation {}
 
 class Start extends React.Component<StartPageProps> {
   render() {
@@ -70,4 +70,4 @@ class Start extends React.Component<StartPageProps> {
   }
 }
 
-export const StartPage = withI18n()(Start)
+export const StartPage = withTranslation()(Start)

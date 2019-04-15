@@ -7,3 +7,6 @@ export const ErrorComponent = () => {
 
   return <h4>This component makes the app crash</h4>
 }
+
+/** @component */
+export default ErrorComponent
