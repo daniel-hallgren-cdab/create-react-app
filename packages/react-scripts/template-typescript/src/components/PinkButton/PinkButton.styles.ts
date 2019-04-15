@@ -1,4 +1,4 @@
-import styled from '../../theme/StyledComponents'
+import { styled } from '../../theme'
 
 export const StyledPinkButton = styled.button`
   color: white;

@@ -1,4 +1,4 @@
-import styled from '../../theme/StyledComponents'
+import { styled } from '../../theme'
 
 import { IGridProps } from './Grid.interfaces'
 

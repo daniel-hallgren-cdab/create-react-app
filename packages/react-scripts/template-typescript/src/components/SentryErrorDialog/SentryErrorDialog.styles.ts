@@ -1,4 +1,4 @@
-import styled from '../../theme/StyledComponents'
+import { styled } from '../../theme'
 
 export const StyledSentryErrorDialog = styled.div`
   padding: 1em;

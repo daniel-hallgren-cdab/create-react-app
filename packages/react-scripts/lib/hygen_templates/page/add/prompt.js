@@ -32,6 +32,16 @@ module.exports = {
           // Use functional component by default
           default: false,
         },
+        {
+          // Yes/no question
+          type: 'confirm',
+          // The argument's name
+          name: 'i18n',
+          // The message to prompt
+          message: 'Do you want to use translations?',
+          // Do not use translations by default
+          default: false,
+        },
       ])
       .then(answers => {
         return Object.assign({}, answers, {

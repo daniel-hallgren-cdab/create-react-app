@@ -1,4 +1,4 @@
-import styled from '../../theme/StyledComponents'
+import { styled } from '../../theme'
 
 import { IModuleProps } from './Module.interfaces'
 import { ITheme } from '../../theme'

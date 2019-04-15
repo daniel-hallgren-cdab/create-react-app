@@ -2,49 +2,56 @@
 to: <%= srcPath %>/src/pages/<%= name %>/<%= name %>.tsx
 ---
 import * as React from 'react'
-import { withI18n, WithI18n } from 'react-i18next'
-import styled from 'styled-components'
+<% if (locals.i18n) { -%>
+import { useTranslation } from 'react-i18next'
+<% } -%>
+
+/* Import components here */
+import { Styled<%= name %> } from './<%= name %>.styles'
+
+/* Import interfaces here */
+<% if (locals.class) { -%>
+import { I<%= name %>Props, I<%= name %>State } from './<%= name %>.interfaces'
+<% } else { -%>
+import { I<%= name %>Props } from './<%= name %>.interfaces'
+<% } -%>
 
 /* Import utilities here */
 
-/* Import components here */
+/* Component */
 
-// CSS
-const Styled<%= name %> = styled.div`
-  /* background: white; */
-
-  /* Nested CSS
-  span {
-    color: black;
-  }
-  */
-`
-
-// Props
-export interface I<%= name %>Props extends WithI18n {
-  /** A great <%= name %> title */
-  /* title: string */
-}
-
-// Component
 <% if (locals.class) { -%>
-export class <%= name %> extends React.Component<I<%= name %>Props> {
-  render () {
-    const { t, children, ...props } = this.props
+export class <%= name %> extends React.Component<I<%= name %>Props, I<%= name %>State> {
+  public state = {
+    counter: 0
+  }
+
+  public render () {
+<% if (locals.i18n) { -%>
+    const { t } = useTranslation()
+<% } -%>
+    
+    const { children, ...props } = this.props
 
     return (
       <Styled<%= name %> {...props}>
-        <span><%= name %></span>
+        <h1><%= name %></h1>
+        <p>{ props.title }</p>
         { children }
       </Styled<%= name %>>
     )
   }
 }
 <% } else { -%>
-export const <%= name %>: React.FunctionComponent<I<%= name %>Props> = ({ t, children, ...props }) => {
+export const <%= name %>: React.FunctionComponent<I<%= name %>Props> = ({ children, ...props }) => {
+<% if (locals.i18n) { -%>
+  const { t } = useTranslation()
+
+<% } -%>
   return (
     <Styled<%= name %> {...props}>
-      <span><%= name %></span>
+      <h1><%= name %></h1>
+      <p>{ props.title }</p>
       { children }
     </Styled<%= name %>>
   )
@@ -52,4 +59,4 @@ export const <%= name %>: React.FunctionComponent<I<%= name %>Props> = ({ t, chi
 <% } -%>
 
 /** @component */
-export default withI18n()(<%= name %>)
+export default <%= name %>
