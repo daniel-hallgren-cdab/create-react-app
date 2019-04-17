@@ -1,7 +1,10 @@
 ---
 to: <%= srcPath %>/src/components/<%= name %>/<%= name %>.interfaces.ts
 ---
-export interface I<%= name %>Props {
+<% if (locals.i18n && locals.class) { -%>
+import { WithTranslation } from 'react-i18next'
+<% } -%>
+export interface I<%= name %>Props <%= locals.i18n && locals.class ? 'extends WithTranslation' : '' %> {
   /**
    * The best and most awesome title ever!!!
    */

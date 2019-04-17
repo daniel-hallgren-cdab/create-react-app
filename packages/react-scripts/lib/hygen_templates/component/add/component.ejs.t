@@ -3,7 +3,7 @@ to: <%= srcPath %>/src/components/<%= name %>/<%= name %>.tsx
 ---
 import * as React from 'react'
 <% if (locals.i18n) { -%>
-import { useTranslation } from 'react-i18next'
+import { <%= locals.class ? 'withTranslation' : 'useTranslation' %> } from 'react-i18next'
 <% } -%>
 
 /* Import components here */
@@ -27,11 +27,7 @@ export class <%= name %> extends React.Component<I<%= name %>Props, I<%= name %>
   }
 
   public render () {
-<% if (locals.i18n) { -%>
-    const { t } = useTranslation()
-<% } -%>
-
-    const { children, ...props } = this.props
+    const { <%= locals.i18n ? 't, ': '' %>children, ...props } = this.props
 
     return (
       <Styled<%= name %> { ...props }>
