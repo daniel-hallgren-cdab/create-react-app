@@ -11,16 +11,14 @@ afterEach(cleanup)
 /* Import utilities here */
 
 /* Import components here */
-import { Module } from './'
+import { PinkButton } from './'
 
 
-describe('Module', () => {
+describe('PinkButton', () => {
   it('renders without crashing', () => {
     render(
         <ThemeProvider theme={theme}>
-          <Module>
-            <p>I'm a child</p>
-          </Module>
+          <PinkButton title='I love PinkButton' />
         </ThemeProvider>
     )
   })

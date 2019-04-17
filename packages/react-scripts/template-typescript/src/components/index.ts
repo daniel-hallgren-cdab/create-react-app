@@ -1,10 +1,9 @@
-/** Generic components */
-export * from './Button'
-export * from './ErrorBoundary'
-export * from './ErrorComponent'
-export * from './Grid'
-export * from './Module'
-export * from './PinkButton'
 export * from './SentryErrorDialog'
+export * from './PinkButton'
+export * from './Module'
+export * from './Grid'
+export * from './ErrorComponent'
+export * from './ErrorBoundary'
+export * from './Button'
 
-/** Project specific components */
+/* Project specific components */

@@ -1,5 +1,4 @@
 export interface IModuleProps {
-  children: any
   /** A large title */
   title?: string
   /**

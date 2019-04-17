@@ -1,0 +1,14 @@
+{
+	"crash": {
+		"feedback-button": "Send Feedback",
+		"header": "Oh no, something went wrong!",
+		"message": "Please let us know what happened."
+	},
+	"everything-okay": "This text is shown if everything works!",
+	"go-home": "Go back to the login page",
+	"no-error-occurred": "So far no error has occured. Press button to trigger error.",
+	"page": {
+		"not-found": "The page was not found",
+		"not-found-text": "Unfortunately we could not find the page associated with this URL."
+	}
+}

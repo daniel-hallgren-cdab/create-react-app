@@ -1,13 +1,30 @@
-<babeledit_project version="1.0">
+<babeledit_project version="1.2">
     <preset_collections/>
     <framework>i18next</framework>
     <filename>reactplate.babel</filename>
     <folder_node>
         <name></name>
         <children>
-            <folder_node>
+            <file_node>
                 <name>common</name>
                 <children>
+                    <concept_node>
+                        <name>about</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description></description>
+                        <comment></comment>
+                        <default_text></default_text>
+                        <translations>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>sv-SE</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
                     <concept_node>
                         <name>applink</name>
                         <definition_loaded>false</definition_loaded>
@@ -42,17 +59,272 @@
                             </translation>
                         </translations>
                     </concept_node>
+                    <concept_node>
+                        <name>lorem</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description></description>
+                        <comment></comment>
+                        <default_text></default_text>
+                        <translations>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>sv-SE</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
                 </children>
-            </folder_node>
+                <filename></filename>
+            </file_node>
+            <file_node>
+                <name>error</name>
+                <children>
+                    <folder_node>
+                        <name>crash</name>
+                        <children>
+                            <concept_node>
+                                <name>feedback-button</name>
+                                <definition_loaded>false</definition_loaded>
+                                <description></description>
+                                <comment></comment>
+                                <default_text></default_text>
+                                <translations>
+                                    <translation>
+                                        <language>en-US</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>sv-SE</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                </translations>
+                            </concept_node>
+                            <concept_node>
+                                <name>header</name>
+                                <definition_loaded>false</definition_loaded>
+                                <description></description>
+                                <comment></comment>
+                                <default_text></default_text>
+                                <translations>
+                                    <translation>
+                                        <language>en-US</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>sv-SE</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                </translations>
+                            </concept_node>
+                            <concept_node>
+                                <name>message</name>
+                                <definition_loaded>false</definition_loaded>
+                                <description></description>
+                                <comment></comment>
+                                <default_text></default_text>
+                                <translations>
+                                    <translation>
+                                        <language>en-US</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>sv-SE</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                </translations>
+                            </concept_node>
+                        </children>
+                    </folder_node>
+                    <concept_node>
+                        <name>everything-okay</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description></description>
+                        <comment></comment>
+                        <default_text></default_text>
+                        <translations>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>sv-SE</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <concept_node>
+                        <name>go-home</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description></description>
+                        <comment></comment>
+                        <default_text></default_text>
+                        <translations>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>sv-SE</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <concept_node>
+                        <name>no-error-occurred</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description></description>
+                        <comment></comment>
+                        <default_text></default_text>
+                        <translations>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>sv-SE</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <folder_node>
+                        <name>page</name>
+                        <children>
+                            <concept_node>
+                                <name>not-found</name>
+                                <definition_loaded>false</definition_loaded>
+                                <description></description>
+                                <comment></comment>
+                                <default_text></default_text>
+                                <translations>
+                                    <translation>
+                                        <language>en-US</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>sv-SE</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                </translations>
+                            </concept_node>
+                            <concept_node>
+                                <name>not-found-text</name>
+                                <definition_loaded>false</definition_loaded>
+                                <description></description>
+                                <comment></comment>
+                                <default_text></default_text>
+                                <translations>
+                                    <translation>
+                                        <language>en-US</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>sv-SE</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                </translations>
+                            </concept_node>
+                        </children>
+                    </folder_node>
+                </children>
+                <filename></filename>
+            </file_node>
+            <file_node>
+                <name>start</name>
+                <children>
+                    <concept_node>
+                        <name>about-this-boilerplate</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description></description>
+                        <comment></comment>
+                        <default_text></default_text>
+                        <translations>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>sv-SE</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <concept_node>
+                        <name>click-me</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description></description>
+                        <comment></comment>
+                        <default_text></default_text>
+                        <translations>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>sv-SE</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <concept_node>
+                        <name>non-existing-page</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description></description>
+                        <comment></comment>
+                        <default_text></default_text>
+                        <translations>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>sv-SE</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <concept_node>
+                        <name>play-with-sentry</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description></description>
+                        <comment></comment>
+                        <default_text></default_text>
+                        <translations>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>sv-SE</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                </children>
+                <filename></filename>
+            </file_node>
         </children>
     </folder_node>
+    <isTemplateProject>false</isTemplateProject>
+    <languages>
+        <language>
+            <code>en-US</code>
+            <source_id></source_id>
+            <source_file>en</source_file>
+        </language>
+        <language>
+            <code>sv-SE</code>
+            <source_id></source_id>
+            <source_file>sv</source_file>
+        </language>
+    </languages>
     <translation_files>
         <translation_file>
-            <language>en-US</language>
             <file>en</file>
         </translation_file>
         <translation_file>
-            <language>sv-SE</language>
             <file>sv</file>
         </translation_file>
     </translation_files>
@@ -64,5 +336,8 @@
         </copy_templates>
     </editor_configuration>
     <primary_language>en-US</primary_language>
-    <configuration/>
+    <configuration>
+        <indent>tab</indent>
+        <format>namespaced-json</format>
+    </configuration>
 </babeledit_project>

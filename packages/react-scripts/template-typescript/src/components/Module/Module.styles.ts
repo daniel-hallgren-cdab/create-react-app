@@ -1,7 +1,6 @@
-import { styled } from '../../theme'
+import { styled, ITheme } from '../../theme'
 
 import { IModuleProps } from './Module.interfaces'
-import { ITheme } from '../../theme'
 
 export const StyledModule = styled.div`
   /* Different values for the grid column span */

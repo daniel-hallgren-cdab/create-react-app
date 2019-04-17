@@ -1,53 +1,57 @@
-import 'jest-dom/extend-expect'
 import * as React from 'react'
-import { cleanup, fireEvent, render } from 'react-testing-library'
-import { ThemeProvider } from '../../theme/StyledComponents'
+import { render, cleanup, fireEvent } from 'react-testing-library'
+import 'jest-dom/extend-expect'
 
+import { ThemeProvider } from '../../theme/StyledComponents'
 import { theme } from '../../theme'
 
-import { Button } from '.'
 
 afterEach(cleanup)
 
-test('renders without crashing', () => {
-  render(
-    <ThemeProvider theme={theme}>
-      <Button />
-    </ThemeProvider>
-  )
-})
+/* Import utilities here */
 
-test('changes text on click', () => {
-  const { container } = render(
-    <ThemeProvider theme={theme}>
-      <Button>My button</Button>
-    </ThemeProvider>
-  )
+/* Import components here */
+import { Button } from './'
 
-  const elem = container.firstChild
 
-  expect(elem).toHaveTextContent('My button')
-})
+describe('Button', () => {
+  it('renders without crashing', () => {
+    render(
+        <ThemeProvider theme={theme}>
+          <Button />
+        </ThemeProvider>
+    )
+  })
 
-test('changes does not change on click', () => {
-  const { container } = render(
-    <ThemeProvider theme={theme}>
-      <Button
-        // tslint:disable-next-line:jsx-no-lambda
-        onClick={() => {
-          return null
-        }}
-      >
-        My button
-      </Button>
-    </ThemeProvider>
-  )
+  it('changes text on click', () => {
+    const { container } = render(
+      <ThemeProvider theme={theme}>
+        <Button>Please click me</Button>
+      </ThemeProvider>
+    )
 
-  const elem = container.firstChild
+    const elem = container.firstChild
 
-  expect(elem).toHaveTextContent('My button')
+    expect(elem).toHaveTextContent('Please click me')
 
-  fireEvent.click(elem as HTMLElement)
+    fireEvent.click(elem as HTMLElement)
 
-  expect(elem).toHaveTextContent('My button')
+    expect(elem).toHaveTextContent('I changed')
+  })
+
+  it('does not change text on click', () => {
+    const { container } = render(
+      <ThemeProvider theme={theme}>
+        <Button onClick={() => { return null }}>I will not change</Button>
+      </ThemeProvider>
+    )
+
+    const elem = container.firstChild
+
+    expect(elem).toHaveTextContent('I will not change')
+
+    fireEvent.click(elem as HTMLElement)
+
+    expect(elem).toHaveTextContent('I will not change')
+  })
 })

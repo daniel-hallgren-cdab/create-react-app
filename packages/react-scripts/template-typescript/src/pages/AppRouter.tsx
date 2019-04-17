@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { BrowserRouter as Router, Redirect, Route, Switch, RouteProps } from 'react-router-dom'
 
-import { AboutPage } from './'
-import { ErrorPage } from './'
-import { SentryPage } from './'
-import { StartPage } from './'
+import { About } from './'
+import { Error } from './'
+import { Sentry } from './'
+import { Start } from './'
 
 export class AppRouter extends React.Component<RouteProps> {
   public render() {
@@ -12,10 +12,10 @@ export class AppRouter extends React.Component<RouteProps> {
       <Router>
         <Switch>
           <Route exact path="/" render={() => <Redirect to="/start" />} />
-          <Route path="/about" component={AboutPage} />
-          <Route exact path="/start" component={StartPage} />
-          <Route path="/sentry" component={SentryPage} />
-          <Route component={ErrorPage} />
+          <Route path="/about" component={About} />
+          <Route exact path="/start" component={Start} />
+          <Route path="/sentry" component={Sentry} />
+          <Route component={Error} />
         </Switch>
       </Router>
     )

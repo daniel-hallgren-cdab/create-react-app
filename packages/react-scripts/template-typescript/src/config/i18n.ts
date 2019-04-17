@@ -4,9 +4,13 @@ import LngDetector from 'i18next-browser-languagedetector'
 
 // English
 import en_common from '../i18n/en/common.json'
+import en_error from '../i18n/en/error.json'
+import en_start from '../i18n/en/start.json'
 
 // Swedish
 import sv_common from '../i18n/sv/common.json'
+import sv_error from '../i18n/sv/error.json'
+import sv_start from '../i18n/sv/start.json'
 
 const options = {
   // order and from where user language should be detected
@@ -27,8 +31,10 @@ i18next
   .use(initReactI18next)
   .init(
   {
-    fallbackLng: ['en', 'sv'],
-    debug: true,
+    debug: process.env.REACT_APP_I18NEXT_DEBUG === 'true',
+
+    fallbackLng: ['sv', 'en'],
+    lng: 'sv',
 
     interpolation: { escapeValue: false },
     defaultNS: 'common',
@@ -37,9 +43,13 @@ i18next
     resources: {
       en: {
         common: en_common,
+        error: en_error,
+        start: en_start,
       },
       sv: {
         common: sv_common,
+        error: sv_error,
+        start: sv_start,
       },
     },
     react: {
@@ -47,7 +57,7 @@ i18next
     },
   },
   (err) => {
-    if (err) return console.log('something went wrong loading', err)
+    if (err) return console.log('Something went wrong loading the translations', err)
   }
 )
 

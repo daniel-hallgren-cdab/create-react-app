@@ -1,12 +1,19 @@
 import * as React from 'react'
-
 import * as Sentry from '@sentry/browser'
 
+/* Import components here */
 import { SentryErrorDialog } from '../'
 
-export class ErrorBoundary extends React.Component {
+/* Import interfaces here */
+import { IErrorBoundaryProps, IErrorBoundaryState } from './ErrorBoundary.interfaces'
+
+/* Import utilities here */
+
+/* Component */
+
+export class ErrorBoundary extends React.Component<IErrorBoundaryProps, IErrorBoundaryState> {
   public state = {
-    error: null,
+    error: null
   }
 
   public componentDidCatch(error: any, errorInfo: any) {
@@ -20,13 +27,15 @@ export class ErrorBoundary extends React.Component {
     })
   }
 
-  public render() {
+  public render () {
+    const { children, ...props } = this.props
+
     if (this.state.error) {
-      // render fallback UI
-      return <SentryErrorDialog />
+      // Render fallback UI
+      return <SentryErrorDialog {...props} />
     }
 
-    // when there's not an error, render children untouched
+    // When there's not an error, render children untouched
     return this.props.children
   }
 }

@@ -1,1 +1,1 @@
-export * from './ErrorPage'
+export { default as Error } from './Error'

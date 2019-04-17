@@ -1,11 +1,25 @@
-import React, { useEffect } from 'react'
+import * as React from 'react'
 
-export const ErrorComponent = () => {
-  useEffect(() => {
-    throw new Error('A very dangerous error')
+/* Import components here */
+import { StyledErrorComponent } from './ErrorComponent.styles'
+
+/* Import interfaces here */
+import { IErrorComponentProps } from './ErrorComponent.interfaces'
+
+/* Import utilities here */
+
+/* Component */
+
+export const ErrorComponent: React.FunctionComponent<IErrorComponentProps> = ({ children, ...props }) => {
+  React.useEffect(() => {
+    throw new Error('A very dangerous error…')
   })
 
-  return <h4>This component makes the app crash</h4>
+  return (
+    <StyledErrorComponent {...props}>
+      <h4>This component makes the app crash</h4>
+    </StyledErrorComponent>
+  )
 }
 
 /** @component */

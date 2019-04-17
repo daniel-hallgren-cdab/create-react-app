@@ -1,0 +1,14 @@
+{
+	"crash": {
+		"feedback-button": "Skicka Feedback ",
+		"header": "Hoppsan, någonting blev fel!",
+		"message": "Snälla berätta vad det var som hände."
+	},
+	"everything-okay": "Den här texten visas om allting fungerar!",
+	"go-home": "Gå tillbaka till inloggningssidan",
+	"no-error-occurred": "Än så länge har inget fel inträffat. Tryck på knappen för att orsaka ett fel.",
+	"page": {
+		"not-found": "Sidan hittades inte",
+		"not-found-text": "Vi kunde tyvärr inte hitta den sidan som webbadressen gäller."
+	}
+}

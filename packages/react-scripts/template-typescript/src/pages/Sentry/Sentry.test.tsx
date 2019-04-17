@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { render, cleanup } from 'react-testing-library'
-import 'jest-dom/extend-expect'
+import { StaticRouter, StaticRouterContext } from 'react-router'
 
 import { ThemeProvider } from '../../theme/StyledComponents'
 import { theme } from '../../theme'
@@ -13,15 +13,18 @@ afterEach(cleanup)
 import i18n from '../../config/i18n'
 
 /* Import components here */
-import { SentryErrorDialog } from './'
+import { Sentry } from './'
 
+const context: StaticRouterContext = {}
 
-describe('SentryErrorDialog', () => {
+describe('Sentry', () => {
   it('renders without crashing', () => {
     render(
       <I18nextProvider i18n={i18n}>
         <ThemeProvider theme={theme}>
-          <SentryErrorDialog />
+          <StaticRouter context={context}>
+            <Sentry />
+          </StaticRouter>
         </ThemeProvider>
       </I18nextProvider>
     )

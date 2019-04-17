@@ -1,1 +1,6 @@
-{ "applink": "Learn React", "description": "Welcome to Reacplate!" }
+{
+	"about": "About this boilerplate",
+	"applink": "Learn React",
+	"description": "Welcome to Reactplate!",
+	"lorem": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi laboriosam quis sint earum nihil consectetur eius harum vel aut repudiandae?"
+}

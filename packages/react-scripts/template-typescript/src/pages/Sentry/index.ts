@@ -1,1 +1,1 @@
-export * from './SentryPage'
+export { default as Sentry } from './Sentry'

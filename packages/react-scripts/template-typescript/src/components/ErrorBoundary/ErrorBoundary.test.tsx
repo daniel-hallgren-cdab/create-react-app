@@ -1,20 +1,25 @@
-import 'jest-dom/extend-expect'
 import * as React from 'react'
-import { cleanup, render } from 'react-testing-library'
-import { ThemeProvider } from '../../theme/StyledComponents'
+import { render, cleanup } from 'react-testing-library'
+import 'jest-dom/extend-expect'
 
+import { ThemeProvider } from '../../theme/StyledComponents'
 import { theme } from '../../theme'
 
-import { ErrorBoundary } from '.'
 
 afterEach(cleanup)
 
-test('renders without crashing', () => {
-  render(
-    <ThemeProvider theme={theme}>
-      <ErrorBoundary>
-        <p>I'm a test!</p>
-      </ErrorBoundary>
-    </ThemeProvider>
-  )
+/* Import utilities here */
+
+/* Import components here */
+import { ErrorBoundary } from './'
+
+
+describe('ErrorBoundary', () => {
+  it('renders without crashing', () => {
+    render(
+        <ThemeProvider theme={theme}>
+          <ErrorBoundary title='I love ErrorBoundary' />
+        </ThemeProvider>
+    )
+  })
 })
