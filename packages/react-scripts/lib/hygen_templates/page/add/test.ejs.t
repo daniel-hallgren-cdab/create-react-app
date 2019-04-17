@@ -7,8 +7,8 @@ import { StaticRouter, StaticRouterContext } from 'react-router'
 
 import { ThemeProvider } from '../../theme/StyledComponents'
 import { theme } from '../../theme'
-
 <% if (locals.i18n) { -%>
+
 import { I18nextProvider } from 'react-i18next'
 <% } -%>
 
@@ -18,7 +18,6 @@ afterEach(cleanup)
 <% if (locals.i18n) { -%>
 import i18n from '../../config/i18n'
 <% } -%>
-import { theme } from '../../theme'
 
 /* Import components here */
 import { <%= name %> } from './'

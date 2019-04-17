@@ -7,8 +7,8 @@ export interface I<%= name %>Props {
    */
   title?: string
 }
-
 <% if (locals.class) { -%>
+
 export interface I<%= name %>State {
   /**
    * Count your money...s

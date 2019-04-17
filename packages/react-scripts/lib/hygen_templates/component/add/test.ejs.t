@@ -3,14 +3,15 @@ to: <%= srcPath %>/src/components/<%= name %>/<%= name %>.test.tsx
 ---
 import * as React from 'react'
 import { render, cleanup } from 'react-testing-library'
+import 'jest-dom/extend-expect'
 <% if (locals.router) { -%>
 import { StaticRouter, StaticRouterContext } from 'react-router'
 <% } -%>
 
 import { ThemeProvider } from '../../theme/StyledComponents'
 import { theme } from '../../theme'
-
 <% if (locals.i18n) { -%>
+
 import { I18nextProvider } from 'react-i18next'
 <% } -%>
 
@@ -20,12 +21,11 @@ afterEach(cleanup)
 <% if (locals.i18n) { -%>
 import i18n from '../../config/i18n'
 <% } -%>
-import { theme } from '../../theme'
 
 /* Import components here */
 import { <%= name %> } from './'
-
 <% if (locals.router) { -%>
+
 const context: StaticRouterContext = {}
 <% } -%>
 
